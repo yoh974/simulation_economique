@@ -20,7 +20,8 @@ namespace SimulationEconomique1
         List<Individu> individus;
 
 
-        public SimulationEconomique(int nombre_individu, double repart, int mu, int sigma, int nb_iteration)
+        public SimulationEconomique(int nombre_individu = 100, double repart = 0.5, int mu = 100, int sigma = 20,
+            int nb_iteration = 100)
         {
             this.nombre_individu = nombre_individu;
             this.repart = repart;
@@ -28,8 +29,6 @@ namespace SimulationEconomique1
             this.sigma = sigma;
             this.nb_iteration = nb_iteration;
             this.pot = new PotCommun(repart);
-
-
         }
 
         public void process()
@@ -41,15 +40,15 @@ namespace SimulationEconomique1
                 double rand_normal = normalRepartition.doCalcul();
 
                 individus.Add(new Individu(rand_normal, "individu_" + i));
-
             }
+
             Console.WriteLine("Gini = " + Gini.calculGini(this.nombre_individu, individus));
             for (int i = 0; i < this.nb_iteration; i++)
             {
                 Iteration.makeIterationRnd(pot, individus, new Random());
             }
+
             Console.WriteLine("Gini = " + Gini.calculGini(this.nombre_individu, individus));
         }
-
     }
 }

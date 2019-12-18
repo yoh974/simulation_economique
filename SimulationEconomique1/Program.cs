@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
+
 
 namespace SimulationEconomique1
 {
@@ -42,7 +37,11 @@ namespace SimulationEconomique1
             {
                 string json = r.ReadToEnd();
                 Parametre parametre = JsonConvert.DeserializeObject<Parametre>(json);
-                                    
+                if (parametre.testNull())
+                {
+                    MessageBox.Show(
+                        "Les paramètres du fichier ne sont pas chargé. Execution avec les paramètres par défaut.","Erreur Paramètres");
+                }
                 SimulationEconomique simulationEconomique = new SimulationEconomique(parametre.Nombre_Individus, parametre.Repart, parametre.Mu, parametre.Sigma, parametre.Nb_Iteration);
                 simulationEconomique.process();
                 Console.ReadKey();

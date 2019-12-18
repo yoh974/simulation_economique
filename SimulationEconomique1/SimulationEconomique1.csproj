@@ -54,6 +54,7 @@
     <Compile Include="Iteration.cs" />
     <Compile Include="NormalRepartition.cs" />
     <Compile Include="Parametre.cs" />
+    <Compile Include="potCommunRnd.cs" />
     <Compile Include="potCommun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

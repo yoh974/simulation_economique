@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SimulationEconomique1
 {
-    class PotCommun
+    public class PotCommun
     {
-        private double valeur;
-        private double repartition;
+        protected double valeur;
+        protected double repartition;
         public PotCommun(double repartition)
         {
             this.repartition = repartition;
@@ -22,14 +22,14 @@ namespace SimulationEconomique1
         {
             this.valeur = valeur;
         }
-        public double[] repartir()
+        public virtual double[] repartir()
         {
             double[] tab = new double[2];
             tab[0] = this.valeur * this.repartition;
             tab[1] = this.valeur * (1 - this.repartition);
             return tab;
         }
-        public double[] repartirRnd()
+        public virtual double[] repartirRnd()
         {
             Random random = new Random();
             double[] tab = new double[2];
