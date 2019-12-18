@@ -43,8 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Gini.cs" />
+    <Compile Include="Individu.cs" />
+    <Compile Include="InitialRepartition.cs" />
+    <Compile Include="Iteration.cs" />
+    <Compile Include="NormalRepartition.cs" />
+    <Compile Include="potCommun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimulationEconomique.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

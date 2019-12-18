@@ -10,6 +10,11 @@ namespace SimulationEconomique1
     {
         static void Main(string[] args)
         {
+            SimulationEconomique simulationEconomique = new SimulationEconomique(100, 0.5, 100, 20, 100);
+            simulationEconomique.process();
+            Console.ReadKey();
+
         }
+
     }
 }
