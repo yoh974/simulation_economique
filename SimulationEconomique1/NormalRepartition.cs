@@ -19,13 +19,13 @@ namespace SimulationEconomique1
         }
         public override double doCalcul()
         {
-            var u1 = this.rand.NextDouble();
-            var u2 = this.rand.NextDouble();
+            double u1 = this.rand.NextDouble();
+            double u2 = this.rand.NextDouble();
 
-            var rand_std_normal = Math.Sqrt(-2.0 * Math.Log(u1)) *
+            double rand_std_normal = Math.Sqrt(-2.0 * Math.Log(u1)) *
                                 Math.Sin(2.0 * Math.PI * u2);
 
-            var rand_normal = this.mu + this.sigma * rand_std_normal;
+            double rand_normal = this.mu + this.sigma * rand_std_normal;
             return rand_normal;
         }
     }

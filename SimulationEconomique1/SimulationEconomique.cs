@@ -32,15 +32,15 @@ namespace SimulationEconomique1
             individus = new List<Individu>();
             for (int i = 0; i < this.nombre_individu; i++)
             {
-                double rand_normal = this.initialRepartition.doCalcul();
+                double rand = this.initialRepartition.doCalcul();
 
-                individus.Add(new Individu(rand_normal, "individu_" + i));
+                individus.Add(new Individu(rand, "individu_" + i));
             }
 
             Console.WriteLine("Gini = " + Gini.calculGini(this.nombre_individu, individus));
             for (int i = 0; i < this.nb_iteration; i++)
             {
-                this.iteration.makeIterationRnd(individus, new Random());
+                this.iteration.makeIteration(individus, new Random());
             }
 
             Console.WriteLine("Gini = " + Gini.calculGini(this.nombre_individu, individus));

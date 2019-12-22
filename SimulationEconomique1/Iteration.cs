@@ -13,7 +13,8 @@ namespace SimulationEconomique1
         {
             this.potCommun = potCommun;
         }
-        public virtual void makeIterationRnd(List<Individu> individus, Random rand)
+        //iteration en choisissant deux individu au hasard
+        public virtual void makeIteration(List<Individu> individus, Random rand)
         {
             int index = rand.Next(individus.Count);
             int index2 = rand.Next(individus.Count);

@@ -52,12 +52,14 @@
     <Compile Include="Individu.cs" />
     <Compile Include="InitialRepartition.cs" />
     <Compile Include="Iteration.cs" />
+    <Compile Include="iterationVoisin.cs" />
     <Compile Include="NormalRepartition.cs" />
     <Compile Include="Parametre.cs" />
     <Compile Include="potCommunRnd.cs" />
     <Compile Include="potCommun.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandomRepartition.cs" />
     <Compile Include="SimulationEconomique.cs" />
   </ItemGroup>
   <ItemGroup>
