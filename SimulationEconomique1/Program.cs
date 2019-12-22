@@ -40,11 +40,15 @@ namespace SimulationEconomique1
                 if (parametre.testNull())
                 {
                     MessageBox.Show(
-                        "Les paramètres du fichier ne sont pas chargé. Execution avec les paramètres par défaut.","Erreur Paramètres");
+                        "Les paramètres du fichier ne sont pas chargé.","Erreur Paramètres");
                 }
-                SimulationEconomique simulationEconomique = new SimulationEconomique(parametre.Nombre_Individus, parametre.Repart, parametre.Mu, parametre.Sigma, parametre.Nb_Iteration);
-                simulationEconomique.process();
-                Console.ReadKey();
+                else
+                {
+                    SimulationEconomique simulationEconomique = new SimulationEconomique(new Iteration(new PotCommun(parametre.Repart)),new NormalRepartition(parametre.Mu,parametre.Sigma), parametre.Nombre_Individus,  parametre.Nb_Iteration);
+                    simulationEconomique.process();
+                    Console.ReadKey(); 
+                }
+
             }
 
         }
